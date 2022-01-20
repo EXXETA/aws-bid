@@ -1,0 +1,38 @@
+<section
+class="relative grid grid-cols-1 px-5 pt-32 pb-16 sm:px-8 lg:px-10 lg:h-screen lg:min-h-[45rem] lg:block lg:pt-44 2xl:min-h-[60rem] 3xl:max-w-screen-3xl 3xl:mx-auto"
+>
+<h1
+  class="relative z-30 lg:w-1/2 font-bandeins-bold-extended-half leading-none text-6xl mb-6 sm:text-8xl"
+>
+  {{welcome.title}}
+</h1>
+
+<h1
+  class=" text-2xl mb-2 sm:text-4xl"
+>
+  {{welcome.subTitle}}
+</h1>
+<article class="relative z-10 row-start-3 lg:w-1/2 lg:max-w-none lg:mt-5">
+  <div class="text-xl leading-7" [innerHTML]=(nl2br(welcome.description))></div>
+  <div
+    class="flex flex-col items-center justify-center space-y-4 mt-10 sm:items-start lg:justify-start xl:flex-row xl:space-y-0 xl:space-x-4"
+  >
+
+    <app-link-button href="#stories">
+      Reference Stories
+    </app-link-button>
+
+    <app-link-button href="#cvs">
+      Reference CVs
+    </app-link-button>
+   
+  </div>
+</article>
+<div
+  class="w-full mb-4 row-start-2 lg:w-1/2 lg:absolute lg:right-0 lg:bottom-0"
+>
+<img
+    [src]="welcome.base64Img"
+ />
+</div>
+</section>

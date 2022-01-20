@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  deployment:
+    build: .
+    volumes:
+      - $HOME/.aws/credentials:/home/worker/.aws/credentials:ro
+    environment:
+      AWS_PROFILE: "${AWS_PROFILE}"
+      BID_USERNAME: "${BID_USERNAME}"
+      BID_PASSWORD: "${BID_PASSWORD}"

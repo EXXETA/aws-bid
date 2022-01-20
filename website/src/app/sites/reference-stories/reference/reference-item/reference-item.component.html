@@ -1,0 +1,24 @@
+<div class="px-12 pt-16" [class.first]="number==0">
+  <h3
+  class="font-bandeins-bold leading-none text-3xl mb-4 lg:text-4xl xl:text-6xl"
+  >
+  {{ story?.title }}
+  </h3>
+
+  <h3
+  class="leading-none text-xl mb-4 lg:text-2xl xl:text-3xl"
+  >
+  {{ story?.subTitle }}
+  </h3>
+
+  <div class="pt-8" *ngFor="let category of story?.categories">
+    <h3 *ngIf="category.title" class="font-bandeins-bold">{{category.title}}</h3>
+    <ul class="pl-6">
+      <li *ngFor="let item of category.items">
+        {{item}}
+      </li>
+    </ul>
+  </div>
+
+  <img *ngIf="story.base64Img" class="w-64 mx-auto mt-8" [src]="story.base64Img" />
+</div>

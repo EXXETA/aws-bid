@@ -1,0 +1,11 @@
+{
+  "/aws": {
+    "target": "http://exxeta-aws-bid-exxetacloudbidexxetaawsbid53573186-vrt5hzj33jea.s3-website.eu-central-1.amazonaws.com",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/aws": "/"
+    }
+  }
+}

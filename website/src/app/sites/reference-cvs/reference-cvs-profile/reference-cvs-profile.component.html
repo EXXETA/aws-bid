@@ -1,0 +1,47 @@
+<div class="card pb-8 px-12 pt-16" id="profile-{{profile.id}}">
+    <div class="sm:flex">
+        <div class="sm:w-8/12">
+            <h3
+            class="font-bandeins-bold leading-none text-3xl mb-4 lg:text-4xl xl:text-6xl"
+            >
+                {{ profile.name }}
+            </h3>
+            <h3
+            class="font-bandeins-bold leading-none text-3xl mb-4 lg:text-4xl xl:text-6xl"
+            >
+                {{ profile.field }}
+            </h3>
+            <div class="font-bandeins-bold leading-none text-xl mb-4 lg:text-2xl xl:text-3xl">
+                {{profile.title}}
+            </div>
+        </div>
+        
+        <img class="mx-auto pb-8 sm:mr-0 w-auto sm:h-44" [src]="profile.base64Img" />
+        
+    </div>
+
+    <div class="flex flex-wrap justify-center">
+        <div>
+            
+            <div>
+                {{profile.description}}
+            </div>
+
+            <div class="pt-8">
+                <h3 class="font-bandeins-bold">Biografie</h3>
+                {{profile.biography}}
+            </div>
+
+            <div class="pt-8">
+                <h3 class="font-bandeins-bold">Beratungskompetenz</h3>
+                {{profile.expertise}}
+            </div>
+
+            <div class="pt-8">
+                <h3 class="font-bandeins-bold">Sprachen</h3>
+                {{profile.language}}
+            </div>
+        </div>
+      </div>
+    
+</div>

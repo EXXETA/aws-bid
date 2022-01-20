@@ -1,0 +1,65 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@font-face {
+    font-display: swap;
+    font-family: Sen Regular;
+    font-weight: 400;
+    src: url(/assets/fonts/Sen-Regular.ttf);
+}
+@font-face {
+    font-display: swap;
+    font-family: Sen Bold;
+    font-weight: 700;
+    src: url(/assets/fonts/Sen-Bold.ttf);
+}
+@font-face {
+    font-display: swap;
+    font-family: Bandeins Strange Bold;
+    font-weight: 700;
+    src: url(/assets/fonts/BandeinsStrange-Bold.woff2);
+}
+@font-face {
+    font-display: swap;
+    font-family: Bandeins Strange Bold Extended Half;
+    font-weight: 700;
+    src: url(/assets/fonts/BandeinsStrange-BoldExtendedHalf.woff2);
+}
+@font-face {
+    font-display: swap;
+    font-family: Bandeins Strange Bold Extended Full;
+    font-weight: 700;
+    src: url(/assets/fonts/BandeinsStrange-BoldExtendedFull.woff2);
+}
+@font-face {
+    font-display: swap;
+    font-family: Bandeins Strange Variable;
+    font-weight: 700;
+    src: url(/assets/fonts/BandeinsStrange-Variable.ttf);
+}
+/*html * {
+    font-family: "Bandeins Strange Variable";
+}*/
+
+html * {
+    font-family: Sen Regular, sans-serif;
+}
+.font-bandeins-bold {
+    font-family: Bandeins Strange Bold, sans-serif;
+}
+.font-sen-bold {
+    font-family: Sen Bold, sans-serif;
+}
+.font-bandeins-variable {
+    font-family: Bandeins Strange Variable, sans-serif;
+}
+.font-bandeins-bold-extended-half {
+    font-family: Bandeins Strange Bold Extended Half, sans-serif;
+}
+.font-bandeins-bold-extended-full {
+    font-family: Bandeins Strange Bold Extended Full, sans-serif;
+}
+.font-sen-regular {
+    font-family: Sen Regular, sans-serif;
+}

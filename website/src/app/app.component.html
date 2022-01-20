@@ -1,0 +1,20 @@
+<ng-container *ngIf="content$ | async as content">
+  <app-header></app-header>
+
+  <main id="top" class="bg-white">
+    <app-welcome [welcome]="content.welcome"></app-welcome>
+    <app-reference-stories
+      [references]="content.references"
+      [profiles]="content.profiles"
+    ></app-reference-stories>
+    <app-reference-cvs [profiles]="content.profiles"></app-reference-cvs>
+  </main>
+
+  <app-footer></app-footer>
+</ng-container>
+
+
+<div wire:loading class="loader fixed top-0 left-0 right-0 bottom-0 w-full h-screen z-50 overflow-hidden bg-white flex flex-col items-center justify-center" [class.hideLoader]="!!(content$ | async)">
+  <img class="loader-x" src="assets/images/x.png" />
+</div>
+

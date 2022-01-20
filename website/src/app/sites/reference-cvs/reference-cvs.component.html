@@ -1,0 +1,26 @@
+<article class="md:flex" id="cvs">
+  <section class="bg-black text-white md:w-2/4">
+    <div
+      class="px-5 py-16 sm:px-8 md:sticky md:top-0 md:pt-24 lg:px-10 2xl:max-w-screen-lg 2xl:ml-auto 3xl:px-24"
+    >
+      <h2
+        class="font-bandeins-bold-extended-half uppercase leading-extra-tight break-words font-bold mb-4 text-63l lg:text-3xl xl:text-3xl"
+      >
+        Reference CVs
+      </h2>
+
+      <div>
+        This is what Exxeta is made of: Our employees. Real CVs, no names. <br/>
+        If you want a reference meeting with our employees, just let us know and we make it up for you.
+      </div>
+
+      <img class="mx-auto" src="assets/images/team.png"/>
+    </div>
+  </section>
+  <section class="js-card-stack md:w-2/4 relative">
+    <app-reference-cvs-profile
+        *ngFor="let profile of profiles"
+        [profile]="profile"
+    ></app-reference-cvs-profile>
+  </section>
+</article>
