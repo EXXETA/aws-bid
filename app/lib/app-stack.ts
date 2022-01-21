@@ -27,7 +27,7 @@ export class AppStack extends Stack {
       handler: 'handler.handler',
       environment: {
         // !!TODO - HASH!!
-        API_ENDPOINT: '',
+        API_ENDPOINT: `https://nexus.exxeta.info/repository/exxeta-raw-group/exxeta/${process.env.BID_USERNAME || ''}/references.json`,
         API_USER: process.env.BID_USERNAME || '',
         API_PASSWORD: process.env.BID_PASSWORD || '',
       }
