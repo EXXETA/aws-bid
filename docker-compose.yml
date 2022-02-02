@@ -3,8 +3,10 @@ services:
   deployment:
     build: .
     volumes:
-      - $HOME/.aws/credentials:/home/worker/.aws/credentials:ro
+      - $HOME/.aws:/home/worker/.aws:ro
     environment:
       AWS_PROFILE: "${AWS_PROFILE}"
       BID_USERNAME: "${BID_USERNAME}"
       BID_PASSWORD: "${BID_PASSWORD}"
+      BID_SUFFIX: "${BID_SUFFIX}"
+      BID_FILE: "${BID_FILE}"

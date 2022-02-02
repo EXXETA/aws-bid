@@ -26,8 +26,7 @@ export class AppStack extends Stack {
       code: new AssetCode('../lambda/dist'),
       handler: 'handler.handler',
       environment: {
-        // !!TODO - HASH!!
-        API_ENDPOINT: `https://nexus.exxeta.info/repository/exxeta-raw-group/exxeta/${process.env.BID_USERNAME || ''}/references.json`,
+        API_ENDPOINT: `https://nexus.exxeta.info/repository/exxeta-raw-group/exxeta/${process.env.BID_USERNAME || ''}/${process.env.BID_FILE || 'references'}.json`,
         API_USER: process.env.BID_USERNAME || '',
         API_PASSWORD: process.env.BID_PASSWORD || '',
       }
@@ -48,16 +47,16 @@ export class AppStack extends Stack {
       methods: [HttpMethod.GET],
     })
 
-    new CfnOutput(this, 'api-gw-endpoint', {
-      exportName: 'exxeta-aws-bid-endpoint',
+    new CfnOutput(this,`api-gw-endpoint`, {
+      exportName: `exxeta-aws-bid${process.env.BID_SUFFIX || ''}-endpoint`,
       value: apiGateway.apiEndpoint,
     });
-    new CfnOutput(this, 's3-bucket-url', {
-      exportName: 'exxeta-aws-bid-s3-url',
+    new CfnOutput(this,`s3-bucket-url`, {
+      exportName: `exxeta-aws-bid${process.env.BID_SUFFIX || ''}-s3-url`,
       value: bucket.bucketWebsiteUrl,
     });
-    new CfnOutput(this, 's3-bucket-name', {
-      exportName: 'exxeta-aws-bid-s3-name',
+    new CfnOutput(this,`s3-bucket-name`, {
+      exportName: `exxeta-aws-bid${process.env.BID_SUFFIX || ''}-s3-name`,
       value: bucket.bucketName,
     });
   }

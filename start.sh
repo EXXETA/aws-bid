@@ -23,11 +23,11 @@ pushd app
     echo "✅"
 popd
 
-S3_BUCKET_NAME="$(aws cloudformation list-exports --region=eu-central-1 | jq -r '.Exports[] | select(.Name == "exxeta-aws-bid-s3-name") | .Value')"
-S3_BUCKET_URL="$(aws cloudformation list-exports --region=eu-central-1 | jq -r '.Exports[] | select(.Name == "exxeta-aws-bid-s3-url") | .Value')"
+S3_BUCKET_NAME="$(aws cloudformation list-exports --region=eu-central-1 | jq -r --arg NAME "exxeta-aws-bid${BID_SUFFIX}-s3-name" '.Exports[] | select(.Name == $NAME) | .Value')"
+S3_BUCKET_URL="$(aws cloudformation list-exports --region=eu-central-1 | jq -r --arg NAME "exxeta-aws-bid${BID_SUFFIX}-s3-url" '.Exports[] | select(.Name == $NAME) | .Value')"
 
 ## The Frontend APP needs the endpoint of the API gateway - write config.js on S3 bucket
-API_ENDPOINT="$(aws cloudformation list-exports --region=eu-central-1 | jq -r '.Exports[] | select(.Name == "exxeta-aws-bid-endpoint") | .Value')"
+API_ENDPOINT="$(aws cloudformation list-exports --region=eu-central-1 | jq -r --arg NAME "exxeta-aws-bid${BID_SUFFIX}-endpoint" '.Exports[] | select(.Name == $NAME) | .Value')"
 echo "{\"endpoint\":\"${API_ENDPOINT}\"}" > ./config.json
 aws s3 cp ./config.json s3://${S3_BUCKET_NAME}
 

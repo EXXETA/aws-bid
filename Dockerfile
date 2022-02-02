@@ -29,4 +29,3 @@ USER worker
 RUN /bin/bash bootstrap.sh
 
 ENTRYPOINT /bin/bash start.sh
-# ENTRYPOINT /bin/bash
